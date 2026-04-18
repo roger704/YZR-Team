@@ -1,0 +1,141 @@
+Tap to Trust
+
+Designing the Approval Moment for Agentic AI
+
+Superchat Design Challenge · Mobile-first · 10 seconds of trust
+
+01 PROBLEM STATEMENT
+
+AI agents are starting to take real actions on behalf of businesses — upgrading plans, processing refunds, booking appointments, updating customer records.
+
+For high-stakes actions, the owner needs to stay in the loop. But "Approve / Deny" is nowhere near enough.
+
+Design the mobile-first approval moment: the 10 seconds between the agent asking for the go-ahead and the owner tapping back.
+
+Sometimes it's a quick yes.
+
+Sometimes it's nuance — a cap, a condition, a whisper in the agent's ear.
+
+Sometimes it's "let me handle this myself."
+
+02 CONTEXT & BACKGROUND
+
+Superchat is the communication OS for 9,000+ businesses globally.
+
+WhatsApp, Email, Voice, and every other channel a customer reaches out on — unified in one place.
+
+We're now building the next layer: AI agents that don't just chat, but act.
+
+Triggering payments. Changing subscriptions. Booking slots. Updating records across connected tools.
+
+From agents that talk → to agents that do. One of the biggest design frontiers in SaaS right now.
+
+Nobody has figured out what it should feel like. This is your shot at defining it.
+
+03 TARGET USER
+
+The always-on, never-at-the-desk SMB owner.
+
+Trusts their AI agent for most things — but for moments that matter, wants control without opening a laptop.
+
+DENTAL PRACTICE OWNER — Between patients. Phone in pocket. 10 seconds between chair turnovers.
+
+RESTAURANT MANAGER — Mid-shift. Hands full. Loud room. Maybe can't type at all.
+
+PERSONAL TRAINER — Between sessions. Gym floor. One thumb. Sweat on screen.
+
+04 DESIGN FOCUS AREAS
+
+Mobile-first interaction design
+
+Notification & alert design
+
+Micro-interactions & motion
+
+Copy and tone of voice
+
+Progressive disclosure of context
+
+Optional: Voice UI for true hands-free control
+
+05 THE APPROVAL FLOW
+
+CUSTOMER — Messages on WhatsApp: "Can I get a refund?"
+
+AI AGENT — Detects high-stakes action, requests approval with context
+
+OWNER — Receives push notification, 10-second window to decide
+
+ACTION — Executed in the connected tool
+
+MEANWHILE, CUSTOMER SIDE — "Let me double-check that with Dr. Marquez — one sec."
+
+⏱ 10-second window
+
+06 THE RESPONSE SPECTRUM
+
+APPROVE — Quick yes. Agent proceeds.
+
+CONSTRAIN — "Go, but cap at €50"
+
+MODIFY — Edit the action itself, then approve.
+
+WHISPER — "Do it, but ask them about X first"
+
+TAKEOVER — "I'll handle this myself"
+
+DENY — No, with a reason the agent can use gracefully.
+
+DEFER — "Ask me again in 10 min"
+
+07 WHAT GREAT LOOKS LIKE
+
+CONTEXT, NOT CLUTTER — The owner sees exactly what they need: action, customer, history, risk. Nothing more. Sometimes a lot. Sometimes almost nothing. Knowing the difference is the craft.
+
+THE CUSTOMER SIDE — What does the customer see while the owner decides? Silence is a design choice. So is "let me double-check for you."
+
+THE HANDOFF BACK — Once the owner decides, the agent continues confidently, in-character, without breaking the conversation. The seam should be invisible.
+
+EMOTIONAL TONE — Light. Fast. Trusted. The owner keeps sipping their coffee.
+
+08 BONUS POINTS
+
+FAILURE MODES — What if the owner doesn't respond?
+
+LEARNING LOOPS — Does the agent get smarter from each decision?
+
+VOICE-FIRST — True hands-free interaction.
+
+SCOPE TIP
+
+Focus deeply on ONE realistic scenario (plan upgrade, refund, booking change) and design it end-to-end.
+
+Depth beats breadth.
+
+SAMPLE SCENARIO — REFUND
+
+Marcus Weber · Customer for 36 months · LTV €2,340
+
+Action: Refund €180 for cancelled cleaning
+
+Agent confidence: 82% · Recommends: Approve
+
+Risk level: Medium
+
+SAMPLE SCENARIO — PLAN UPGRADE
+
+The Klein Family · 4 members · 52 months tenure · LTV €4,180
+
+Action: Upgrade Family Basic → Family Premium (€29 → €79/mo)
+
+Billing impact: €600/year · Irreversible within 14 days
+
+Risk level: HIGH · Agent confidence: 71%
+
+SAMPLE SCENARIO — BOOKING CHANGE
+
+Sofia Hartmann · Positive sentiment · 8 months tenure
+
+Action: Reschedule checkup from tomorrow 09:00 → Wed 14:30
+
+Risk level: Low · Agent confidence: 96%

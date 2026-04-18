@@ -1,0 +1,233 @@
+{
+  "_meta": {
+    "title": "Tap to Trust — Sample Data",
+    "purpose": "Realistic fixture data for designing and prototyping the mobile approval moment for agentic AI in Superchat.",
+    "scenario": "A dental practice owner (Dr. Elena Marquez of Brightsmile Dental) receives approval requests from her AI agent 'Chattie' throughout a working day. The data covers the full spectrum of high-stakes agent actions an SMB owner might face.",
+    "structure": {
+      "business": "The SMB context — owner profile, notification preferences, and the AI agent's persona & autonomy level.",
+      "approval_requests": "Four end-to-end scenarios covering every risk level and action category. Each request includes: action details, customer context (LTV, tenure, sentiment), conversation snippet leading up to the ask, the agent's recommendation + confidence, the full response spectrum (approve / approve-with-constraint / whisper / takeover / deny-with-reason / defer), and the holding message the customer sees while waiting.",
+      "decision_log": "Recent past decisions — used to show history, response times, and learning inputs.",
+      "learning_signals": "Pattern the agent has detected from the owner's past behavior, ready to be proposed as an auto-approval rule."
+    },
+    "scenarios_included": [
+      "apr_001 — Medium-risk refund (€180, long-tenure customer)",
+      "apr_002 — Low-risk booking reschedule (positive-sentiment customer)",
+      "apr_003 — High-risk plan upgrade (€600 billing impact, irreversible window)",
+      "apr_004 — Medium-risk customer record update (insurance change)"
+    ],
+    "response_types": {
+      "approve": "Quick yes.",
+      "approve_with_constraint": "Go, but with a cap/condition (e.g. 'cap at €50').",
+      "modify": "Edit the action itself before approving.",
+      "whisper": "Approve, but tell the agent to also ask/mention something.",
+      "takeover": "Owner handles this personally.",
+      "deny_with_reason": "No, with context so the agent can explain gracefully.",
+      "defer": "Ask me again later."
+    },
+    "risk_levels": ["low", "medium", "high"],
+    "recommended_use": "Use as the data layer behind mobile mockups, interactive prototypes, or notification/voice-UI experiments. Pick one apr_* scenario and design it end-to-end — depth beats breadth."
+  },
+  "business": {
+    "id": "biz_8f3a9c",
+    "name": "Brightsmile Dental",
+    "type": "dental_practice",
+    "owner": {
+      "id": "usr_owner_01",
+      "name": "Dr. Elena Marquez",
+      "role": "Practice Owner",
+      "phone": "+49 151 22334455",
+      "timezone": "Europe/Berlin",
+      "notification_prefs": {
+        "push": true,
+        "voice": true,
+        "quiet_hours": "22:00-07:00"
+      }
+    },
+    "agent": {
+      "id": "agent_sc_01",
+      "name": "Chattie",
+      "persona": "warm, concise, professional",
+      "autonomy_level": "supervised",
+      "channels": ["whatsapp", "email", "voice"]
+    }
+  },
+  "approval_requests": [
+    {
+      "id": "apr_001",
+      "created_at": "2026-04-18T10:42:13Z",
+      "risk_level": "medium",
+      "category": "refund",
+      "action": {
+        "type": "process_refund",
+        "amount": 180.00,
+        "currency": "EUR",
+        "reason": "Patient rescheduled cleaning; prepaid"
+      },
+      "customer": {
+        "id": "cust_4821",
+        "name": "Marcus Weber",
+        "lifetime_value": 2340.00,
+        "tenure_months": 36,
+        "last_visit": "2026-02-11",
+        "sentiment": "neutral",
+        "channel": "whatsapp"
+      },
+      "conversation_snippet": [
+        { "from": "customer", "at": "10:38", "text": "Hi, I need to cancel my cleaning tomorrow. Can I get the €180 back?" },
+        { "from": "agent", "at": "10:39", "text": "Of course, Marcus. One moment while I check with Dr. Marquez." }
+      ],
+      "agent_recommendation": "approve",
+      "agent_confidence": 0.82,
+      "suggested_responses": [
+        { "type": "approve", "label": "Refund €180" },
+        { "type": "approve_with_constraint", "label": "Refund, but offer reschedule first" },
+        { "type": "whisper", "label": "Approve, but ask about next visit" },
+        { "type": "takeover", "label": "I'll handle this" },
+        { "type": "deny_with_reason", "label": "Offer credit instead of refund" },
+        { "type": "defer", "label": "Ask me in 10 min" }
+      ],
+      "customer_waiting_message": "Dr. Marquez is taking a quick look — one sec."
+    },
+    {
+      "id": "apr_002",
+      "created_at": "2026-04-18T11:05:47Z",
+      "risk_level": "low",
+      "category": "booking_change",
+      "action": {
+        "type": "reschedule_appointment",
+        "from_slot": "2026-04-19T09:00:00Z",
+        "to_slot": "2026-04-22T14:30:00Z",
+        "service": "Routine Checkup"
+      },
+      "customer": {
+        "id": "cust_9102",
+        "name": "Sofia Hartmann",
+        "lifetime_value": 680.00,
+        "tenure_months": 8,
+        "last_visit": "2025-10-04",
+        "sentiment": "positive",
+        "channel": "whatsapp"
+      },
+      "conversation_snippet": [
+        { "from": "customer", "at": "11:03", "text": "Something came up — can I move tomorrow to next Wednesday afternoon?" },
+        { "from": "agent", "at": "11:04", "text": "Wednesday 14:30 is open. Checking with the team." }
+      ],
+      "agent_recommendation": "approve",
+      "agent_confidence": 0.96,
+      "suggested_responses": [
+        { "type": "approve", "label": "Confirm Wed 14:30" },
+        { "type": "modify", "label": "Offer earlier slot" },
+        { "type": "defer", "label": "Ask me in 10 min" }
+      ],
+      "customer_waiting_message": "One moment — confirming that for you."
+    },
+    {
+      "id": "apr_003",
+      "created_at": "2026-04-18T13:22:09Z",
+      "risk_level": "high",
+      "category": "plan_upgrade",
+      "action": {
+        "type": "upgrade_subscription",
+        "from_plan": "Family Basic – €29/mo",
+        "to_plan": "Family Premium – €79/mo",
+        "billing_impact": 600.00,
+        "effective": "immediate"
+      },
+      "customer": {
+        "id": "cust_2277",
+        "name": "The Klein Family (4 members)",
+        "lifetime_value": 4180.00,
+        "tenure_months": 52,
+        "last_visit": "2026-03-30",
+        "sentiment": "positive",
+        "channel": "whatsapp"
+      },
+      "conversation_snippet": [
+        { "from": "customer", "at": "13:20", "text": "We'd like the premium plan — the whitening and night-guard coverage especially." },
+        { "from": "agent", "at": "13:21", "text": "Great choice. Let me confirm the switch with Dr. Marquez." }
+      ],
+      "agent_recommendation": "approve_with_constraint",
+      "agent_confidence": 0.71,
+      "risk_signals": [
+        "New billing above €500",
+        "Irreversible within 14 days"
+      ],
+      "suggested_responses": [
+        { "type": "approve", "label": "Upgrade now" },
+        { "type": "approve_with_constraint", "label": "Upgrade, start next cycle" },
+        { "type": "whisper", "label": "Approve, confirm whitening coverage details" },
+        { "type": "takeover", "label": "Call them myself" },
+        { "type": "deny_with_reason", "label": "Suggest 3-month trial first" },
+        { "type": "defer", "label": "Decide after 15:00" }
+      ],
+      "customer_waiting_message": "Pulling up the details — back in a moment."
+    },
+    {
+      "id": "apr_004",
+      "created_at": "2026-04-18T15:48:30Z",
+      "risk_level": "medium",
+      "category": "record_update",
+      "action": {
+        "type": "update_customer_record",
+        "fields": {
+          "insurance_provider": "AOK Bayern",
+          "policy_number": "A-992-4481"
+        }
+      },
+      "customer": {
+        "id": "cust_5513",
+        "name": "Jonas Becker",
+        "lifetime_value": 1240.00,
+        "tenure_months": 18,
+        "last_visit": "2026-01-22",
+        "sentiment": "neutral",
+        "channel": "email"
+      },
+      "conversation_snippet": [
+        { "from": "customer", "at": "15:44", "text": "I switched insurance. New details attached." },
+        { "from": "agent", "at": "15:45", "text": "Got it — verifying and updating your file." }
+      ],
+      "agent_recommendation": "approve",
+      "agent_confidence": 0.88,
+      "suggested_responses": [
+        { "type": "approve", "label": "Update record" },
+        { "type": "whisper", "label": "Approve, request policy card photo" },
+        { "type": "deny_with_reason", "label": "Need verification first" }
+      ],
+      "customer_waiting_message": "Updating your file now."
+    }
+  ],
+  "decision_log": [
+    {
+      "request_id": "apr_000_prev",
+      "decided_at": "2026-04-17T16:12:00Z",
+      "decision": "approve_with_constraint",
+      "constraint": "cap_at_50_eur",
+      "response_time_seconds": 7,
+      "outcome": "success",
+      "customer_satisfaction": 5
+    },
+    {
+      "request_id": "apr_000_prev2",
+      "decided_at": "2026-04-17T11:30:00Z",
+      "decision": "takeover",
+      "response_time_seconds": 12,
+      "outcome": "success",
+      "customer_satisfaction": 5
+    },
+    {
+      "request_id": "apr_000_prev3",
+      "decided_at": "2026-04-16T09:05:00Z",
+      "decision": "deny_with_reason",
+      "reason": "Against store policy for items >30 days",
+      "response_time_seconds": 9,
+      "outcome": "resolved_alternate"
+    }
+  ],
+  "learning_signals": {
+    "pattern_detected": "Owner consistently approves refunds under €200 for customers with >24mo tenure",
+    "proposed_rule": "Auto-approve refunds ≤€200 for customers with 24+ month tenure",
+    "confidence": 0.91,
+    "requires_owner_confirmation": true
+  }
+}

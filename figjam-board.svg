@@ -1,0 +1,282 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 2300" font-family="Inter, -apple-system, sans-serif">
+  <rect width="1700" height="2300" fill="#fafafa"/>
+
+  <!-- Header -->
+  <text x="850" y="80" font-size="56" font-weight="700" fill="#1e1e1e" text-anchor="middle">Tap to Trust</text>
+  <text x="850" y="120" font-size="24" fill="#495057" text-anchor="middle">Designing the Approval Moment for Agentic AI</text>
+  <text x="850" y="150" font-size="16" fill="#868e96" text-anchor="middle">Superchat Design Challenge  ·  Mobile-first  ·  10 seconds of trust</text>
+
+  <!-- 01 Problem -->
+  <rect x="80" y="200" width="820" height="280" rx="12" fill="#fff5f5" stroke="#c92a2a" stroke-width="2"/>
+  <text x="100" y="235" font-size="22" font-weight="700" fill="#c92a2a">01  PROBLEM STATEMENT</text>
+  <text x="100" y="275" font-size="15" fill="#1e1e1e">
+    <tspan x="100" dy="0">AI agents are starting to take real actions on behalf of businesses —</tspan>
+    <tspan x="100" dy="22">upgrading plans, processing refunds, booking appointments, updating</tspan>
+    <tspan x="100" dy="22">customer records. For high-stakes actions, the owner needs to stay in</tspan>
+    <tspan x="100" dy="22">the loop. But "Approve / Deny" is nowhere near enough.</tspan>
+    <tspan x="100" dy="32" font-weight="600">Design the mobile-first approval moment:</tspan>
+    <tspan x="100" dy="22">the 10 seconds between the ask and the tap.</tspan>
+    <tspan x="100" dy="32">• Sometimes a quick yes.  • Sometimes nuance — a cap, a whisper.</tspan>
+    <tspan x="100" dy="22">• Sometimes: "let me handle this myself."</tspan>
+  </text>
+
+  <!-- 02 Context -->
+  <rect x="920" y="200" width="700" height="280" rx="12" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+  <text x="940" y="235" font-size="22" font-weight="700" fill="#1971c2">02  CONTEXT &amp; BACKGROUND</text>
+  <text x="940" y="275" font-size="15" fill="#1e1e1e">
+    <tspan x="940" dy="0">Superchat is the communication OS for 9,000+ businesses globally —</tspan>
+    <tspan x="940" dy="22">WhatsApp, Email, Voice, and every channel a customer reaches out on,</tspan>
+    <tspan x="940" dy="22">unified in one place.</tspan>
+    <tspan x="940" dy="32">We're now building the next layer: AI agents that don't just chat,</tspan>
+    <tspan x="940" dy="22">but act — triggering payments, changing subscriptions, booking slots.</tspan>
+    <tspan x="940" dy="32" font-weight="600">From agents that talk → to agents that do.</tspan>
+    <tspan x="940" dy="22">Nobody has figured out what it should feel like. This is your shot.</tspan>
+  </text>
+
+  <!-- 03 Target User -->
+  <text x="80" y="540" font-size="24" font-weight="700" fill="#1e1e1e">03  TARGET USER</text>
+  <text x="80" y="570" font-size="16" fill="#495057">The always-on, never-at-the-desk SMB owner. Trusts the agent for most things — wants control without a laptop.</text>
+
+  <g>
+    <rect x="80" y="600" width="500" height="150" rx="12" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+    <text x="100" y="635" font-size="17" font-weight="700" fill="#1e1e1e">DENTAL PRACTICE OWNER</text>
+    <text x="100" y="670" font-size="14" fill="#1e1e1e">
+      <tspan x="100" dy="0">Between patients. Phone in pocket.</tspan>
+      <tspan x="100" dy="22">10 seconds between chair turnovers.</tspan>
+      <tspan x="100" dy="28" font-style="italic">"Did the refund go through</tspan>
+      <tspan x="100" dy="20" font-style="italic">while I was numbing?"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="600" y="600" width="500" height="150" rx="12" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+    <text x="620" y="635" font-size="17" font-weight="700" fill="#1e1e1e">RESTAURANT MANAGER</text>
+    <text x="620" y="670" font-size="14" fill="#1e1e1e">
+      <tspan x="620" dy="0">Mid-shift. Hands full. Loud room.</tspan>
+      <tspan x="620" dy="22">Can't read long text; can't type.</tspan>
+      <tspan x="620" dy="28" font-style="italic">"Voice? A glance? A tap?"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="1120" y="600" width="500" height="150" rx="12" fill="#f3d9fa" stroke="#862e9c" stroke-width="2"/>
+    <text x="1140" y="635" font-size="17" font-weight="700" fill="#1e1e1e">PERSONAL TRAINER</text>
+    <text x="1140" y="670" font-size="14" fill="#1e1e1e">
+      <tspan x="1140" dy="0">Between sessions. Gym floor.</tspan>
+      <tspan x="1140" dy="22">Sweat on screen. One thumb.</tspan>
+      <tspan x="1140" dy="28" font-style="italic">"Approve the €80 pack now?</tspan>
+      <tspan x="1140" dy="20" font-style="italic">Or ask me in 10?"</tspan>
+    </text>
+  </g>
+
+  <!-- 04 Focus Areas -->
+  <text x="80" y="810" font-size="24" font-weight="700" fill="#1e1e1e">04  DESIGN FOCUS AREAS</text>
+
+  <g>
+    <ellipse cx="190" cy="900" rx="110" ry="60" fill="#c5f6fa" stroke="#0c8599" stroke-width="2"/>
+    <text x="190" y="895" font-size="15" font-weight="600" fill="#1e1e1e" text-anchor="middle">Mobile-first</text>
+    <text x="190" y="915" font-size="14" fill="#1e1e1e" text-anchor="middle">interaction</text>
+  </g>
+  <g>
+    <ellipse cx="440" cy="900" rx="110" ry="60" fill="#c5f6fa" stroke="#0c8599" stroke-width="2"/>
+    <text x="440" y="895" font-size="15" font-weight="600" fill="#1e1e1e" text-anchor="middle">Notifications</text>
+    <text x="440" y="915" font-size="14" fill="#1e1e1e" text-anchor="middle">&amp; alerts</text>
+  </g>
+  <g>
+    <ellipse cx="690" cy="900" rx="110" ry="60" fill="#c5f6fa" stroke="#0c8599" stroke-width="2"/>
+    <text x="690" y="895" font-size="15" font-weight="600" fill="#1e1e1e" text-anchor="middle">Micro-interactions</text>
+    <text x="690" y="915" font-size="14" fill="#1e1e1e" text-anchor="middle">&amp; motion</text>
+  </g>
+  <g>
+    <ellipse cx="940" cy="900" rx="110" ry="60" fill="#c5f6fa" stroke="#0c8599" stroke-width="2"/>
+    <text x="940" y="895" font-size="15" font-weight="600" fill="#1e1e1e" text-anchor="middle">Copy &amp; tone</text>
+    <text x="940" y="915" font-size="14" fill="#1e1e1e" text-anchor="middle">of voice</text>
+  </g>
+  <g>
+    <ellipse cx="1190" cy="900" rx="120" ry="60" fill="#c5f6fa" stroke="#0c8599" stroke-width="2"/>
+    <text x="1190" y="895" font-size="15" font-weight="600" fill="#1e1e1e" text-anchor="middle">Progressive</text>
+    <text x="1190" y="915" font-size="14" fill="#1e1e1e" text-anchor="middle">disclosure</text>
+  </g>
+  <g>
+    <ellipse cx="1450" cy="900" rx="110" ry="60" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="1450" y="890" font-size="13" fill="#495057" text-anchor="middle">Optional:</text>
+    <text x="1450" y="910" font-size="15" font-weight="600" fill="#1e1e1e" text-anchor="middle">Voice UI</text>
+    <text x="1450" y="928" font-size="13" fill="#495057" text-anchor="middle">hands-free</text>
+  </g>
+
+  <!-- 05 Flow -->
+  <text x="80" y="1020" font-size="24" font-weight="700" fill="#1e1e1e">05  THE APPROVAL FLOW</text>
+
+  <g>
+    <rect x="80" y="1060" width="200" height="120" rx="12" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+    <text x="180" y="1100" font-size="17" font-weight="700" fill="#1e1e1e" text-anchor="middle">CUSTOMER</text>
+    <text x="180" y="1130" font-size="13" fill="#1e1e1e" text-anchor="middle">Messages on</text>
+    <text x="180" y="1150" font-size="13" fill="#1e1e1e" text-anchor="middle">WhatsApp</text>
+  </g>
+  <g>
+    <rect x="500" y="1060" width="200" height="120" rx="12" fill="#eebefa" stroke="#862e9c" stroke-width="2"/>
+    <text x="600" y="1100" font-size="17" font-weight="700" fill="#1e1e1e" text-anchor="middle">AI AGENT</text>
+    <text x="600" y="1130" font-size="13" fill="#1e1e1e" text-anchor="middle">Detects high-</text>
+    <text x="600" y="1150" font-size="13" fill="#1e1e1e" text-anchor="middle">stakes action</text>
+  </g>
+  <g>
+    <rect x="920" y="1060" width="200" height="120" rx="12" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2"/>
+    <text x="1020" y="1100" font-size="17" font-weight="700" fill="#1e1e1e" text-anchor="middle">OWNER</text>
+    <text x="1020" y="1130" font-size="13" fill="#1e1e1e" text-anchor="middle">Receives push</text>
+    <text x="1020" y="1150" font-size="13" fill="#1e1e1e" text-anchor="middle">notification</text>
+  </g>
+  <g>
+    <rect x="1340" y="1060" width="200" height="120" rx="12" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+    <text x="1440" y="1100" font-size="17" font-weight="700" fill="#1e1e1e" text-anchor="middle">ACTION</text>
+    <text x="1440" y="1130" font-size="13" fill="#1e1e1e" text-anchor="middle">Executed in</text>
+    <text x="1440" y="1150" font-size="13" fill="#1e1e1e" text-anchor="middle">connected tool</text>
+  </g>
+
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1e1e1e"/>
+    </marker>
+  </defs>
+  <line x1="285" y1="1120" x2="495" y2="1120" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="390" y="1095" font-size="13" fill="#495057" text-anchor="middle" font-style="italic">"Can I get a refund?"</text>
+  <line x1="705" y1="1120" x2="915" y2="1120" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="810" y="1095" font-size="13" fill="#495057" text-anchor="middle">approval + context</text>
+  <line x1="1125" y1="1120" x2="1335" y2="1120" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="1230" y="1095" font-size="13" fill="#495057" text-anchor="middle">one-tap decision</text>
+
+  <text x="1020" y="1210" font-size="15" font-weight="600" fill="#e03131" text-anchor="middle">⏱  10-second window</text>
+
+  <rect x="80" y="1240" width="420" height="80" rx="12" fill="#f1f3f5" stroke="#868e96" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="100" y="1268" font-size="12" font-weight="700" fill="#495057">MEANWHILE, CUSTOMER SIDE:</text>
+  <text x="100" y="1295" font-size="14" fill="#1e1e1e" font-style="italic">"Let me double-check that with Dr. Marquez — one sec."</text>
+
+  <!-- 06 Spectrum -->
+  <text x="80" y="1380" font-size="24" font-weight="700" fill="#1e1e1e">06  THE RESPONSE SPECTRUM</text>
+  <text x="80" y="1408" font-size="15" fill="#495057">Not just Approve/Deny. Seven ways to answer, depending on how much nuance the moment needs.</text>
+
+  <g>
+    <rect x="80" y="1430" width="215" height="140" rx="12" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+    <text x="187" y="1470" font-size="16" font-weight="700" fill="#1e1e1e" text-anchor="middle">APPROVE</text>
+    <text x="187" y="1510" font-size="13" fill="#1e1e1e" text-anchor="middle">Quick yes.</text>
+    <text x="187" y="1528" font-size="13" fill="#1e1e1e" text-anchor="middle">Agent proceeds.</text>
+  </g>
+  <g>
+    <rect x="315" y="1430" width="215" height="140" rx="12" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+    <text x="422" y="1470" font-size="16" font-weight="700" fill="#1e1e1e" text-anchor="middle">CONSTRAIN</text>
+    <text x="422" y="1510" font-size="13" fill="#1e1e1e" text-anchor="middle" font-style="italic">"Go, but cap</text>
+    <text x="422" y="1528" font-size="13" fill="#1e1e1e" text-anchor="middle" font-style="italic">at €50"</text>
+  </g>
+  <g>
+    <rect x="550" y="1430" width="215" height="140" rx="12" fill="#c5f6fa" stroke="#0c8599" stroke-width="2"/>
+    <text x="657" y="1470" font-size="16" font-weight="700" fill="#1e1e1e" text-anchor="middle">MODIFY</text>
+    <text x="657" y="1510" font-size="13" fill="#1e1e1e" text-anchor="middle">Edit the action,</text>
+    <text x="657" y="1528" font-size="13" fill="#1e1e1e" text-anchor="middle">then approve.</text>
+  </g>
+  <g>
+    <rect x="785" y="1430" width="215" height="140" rx="12" fill="#f3d9fa" stroke="#862e9c" stroke-width="2"/>
+    <text x="892" y="1470" font-size="16" font-weight="700" fill="#1e1e1e" text-anchor="middle">WHISPER</text>
+    <text x="892" y="1510" font-size="13" fill="#1e1e1e" text-anchor="middle" font-style="italic">"Do it, but ask</text>
+    <text x="892" y="1528" font-size="13" fill="#1e1e1e" text-anchor="middle" font-style="italic">about X first"</text>
+  </g>
+  <g>
+    <rect x="1020" y="1430" width="215" height="140" rx="12" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+    <text x="1127" y="1470" font-size="16" font-weight="700" fill="#1e1e1e" text-anchor="middle">TAKEOVER</text>
+    <text x="1127" y="1510" font-size="13" fill="#1e1e1e" text-anchor="middle" font-style="italic">"I'll handle</text>
+    <text x="1127" y="1528" font-size="13" fill="#1e1e1e" text-anchor="middle" font-style="italic">this myself"</text>
+  </g>
+  <g>
+    <rect x="1255" y="1430" width="215" height="140" rx="12" fill="#ffc9c9" stroke="#c92a2a" stroke-width="2"/>
+    <text x="1362" y="1470" font-size="16" font-weight="700" fill="#1e1e1e" text-anchor="middle">DENY</text>
+    <text x="1362" y="1510" font-size="13" fill="#1e1e1e" text-anchor="middle">No, with a reason</text>
+    <text x="1362" y="1528" font-size="13" fill="#1e1e1e" text-anchor="middle">the agent can use.</text>
+  </g>
+  <g>
+    <rect x="1490" y="1430" width="130" height="140" rx="12" fill="#e9ecef" stroke="#868e96" stroke-width="2"/>
+    <text x="1555" y="1470" font-size="16" font-weight="700" fill="#1e1e1e" text-anchor="middle">DEFER</text>
+    <text x="1555" y="1510" font-size="12" fill="#1e1e1e" text-anchor="middle" font-style="italic">"Ask me</text>
+    <text x="1555" y="1528" font-size="12" fill="#1e1e1e" text-anchor="middle" font-style="italic">in 10 min"</text>
+  </g>
+
+  <!-- 07 What Great Looks Like -->
+  <text x="80" y="1640" font-size="24" font-weight="700" fill="#1e1e1e">07  WHAT GREAT LOOKS LIKE</text>
+
+  <g>
+    <rect x="80" y="1680" width="370" height="200" rx="12" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+    <text x="100" y="1715" font-size="16" font-weight="700" fill="#1971c2">CONTEXT, NOT CLUTTER</text>
+    <text x="100" y="1745" font-size="14" fill="#1e1e1e">
+      <tspan x="100" dy="0">The owner sees exactly what they</tspan>
+      <tspan x="100" dy="20">need — action, customer, history,</tspan>
+      <tspan x="100" dy="20">risk — and nothing more.</tspan>
+      <tspan x="100" dy="28">Sometimes a lot. Sometimes</tspan>
+      <tspan x="100" dy="20">almost nothing. Knowing the</tspan>
+      <tspan x="100" dy="20">difference is the craft.</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="470" y="1680" width="370" height="200" rx="12" fill="#f8f0fc" stroke="#862e9c" stroke-width="2"/>
+    <text x="490" y="1715" font-size="16" font-weight="700" fill="#862e9c">THE CUSTOMER SIDE</text>
+    <text x="490" y="1745" font-size="14" fill="#1e1e1e">
+      <tspan x="490" dy="0">What does the customer see while</tspan>
+      <tspan x="490" dy="20">the owner decides?</tspan>
+      <tspan x="490" dy="28">Silence is a design choice.</tspan>
+      <tspan x="490" dy="20">So is "let me double-check</tspan>
+      <tspan x="490" dy="20">for you."</tspan>
+      <tspan x="490" dy="28">Don't leave them hanging.</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="860" y="1680" width="370" height="200" rx="12" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+    <text x="880" y="1715" font-size="16" font-weight="700" fill="#2f9e44">THE HANDOFF BACK</text>
+    <text x="880" y="1745" font-size="14" fill="#1e1e1e">
+      <tspan x="880" dy="0">Once the owner decides — how</tspan>
+      <tspan x="880" dy="20">does the agent continue?</tspan>
+      <tspan x="880" dy="28">Confidently. In-character.</tspan>
+      <tspan x="880" dy="20">Without breaking the</tspan>
+      <tspan x="880" dy="20">conversation.</tspan>
+      <tspan x="880" dy="28">The seam should be invisible.</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="1250" y="1680" width="370" height="200" rx="12" fill="#fff4e6" stroke="#e8590c" stroke-width="2"/>
+    <text x="1270" y="1715" font-size="16" font-weight="700" fill="#e8590c">EMOTIONAL TONE</text>
+    <text x="1270" y="1745" font-size="14" fill="#1e1e1e">
+      <tspan x="1270" dy="0">Light. Fast. Trusted.</tspan>
+      <tspan x="1270" dy="28">The owner keeps sipping</tspan>
+      <tspan x="1270" dy="20">their coffee.</tspan>
+      <tspan x="1270" dy="28">No anxiety spikes. No modal</tspan>
+      <tspan x="1270" dy="20">paperwork. Just one clear</tspan>
+      <tspan x="1270" dy="20">moment, then done.</tspan>
+    </text>
+  </g>
+
+  <!-- 08 Bonus -->
+  <text x="80" y="1940" font-size="24" font-weight="700" fill="#1e1e1e">08  BONUS POINTS</text>
+
+  <g>
+    <polygon points="240,1990 400,2090 240,2190 80,2090" fill="#ffe3e3" stroke="#c92a2a" stroke-width="2"/>
+    <text x="240" y="2075" font-size="15" font-weight="700" fill="#1e1e1e" text-anchor="middle">FAILURE MODES</text>
+    <text x="240" y="2105" font-size="12" fill="#1e1e1e" text-anchor="middle">What if the owner</text>
+    <text x="240" y="2122" font-size="12" fill="#1e1e1e" text-anchor="middle">doesn't respond?</text>
+  </g>
+  <g>
+    <polygon points="600,1990 760,2090 600,2190 440,2090" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+    <text x="600" y="2075" font-size="15" font-weight="700" fill="#1e1e1e" text-anchor="middle">LEARNING LOOPS</text>
+    <text x="600" y="2105" font-size="12" fill="#1e1e1e" text-anchor="middle">Does the agent get</text>
+    <text x="600" y="2122" font-size="12" fill="#1e1e1e" text-anchor="middle">smarter each time?</text>
+  </g>
+  <g>
+    <polygon points="960,1990 1120,2090 960,2190 800,2090" fill="#f3d9fa" stroke="#862e9c" stroke-width="2"/>
+    <text x="960" y="2075" font-size="15" font-weight="700" fill="#1e1e1e" text-anchor="middle">VOICE-FIRST</text>
+    <text x="960" y="2105" font-size="12" fill="#1e1e1e" text-anchor="middle">True hands-free</text>
+    <text x="960" y="2122" font-size="12" fill="#1e1e1e" text-anchor="middle">interaction.</text>
+  </g>
+
+  <!-- Scope Tip -->
+  <rect x="1180" y="1990" width="440" height="200" rx="12" fill="#fff9db" stroke="#1e1e1e" stroke-width="3"/>
+  <text x="1200" y="2025" font-size="18" font-weight="700" fill="#1e1e1e">SCOPE TIP</text>
+  <text x="1200" y="2055" font-size="14" fill="#1e1e1e">
+    <tspan x="1200" dy="0">Focus deeply on ONE realistic scenario</tspan>
+    <tspan x="1200" dy="22">(plan upgrade, refund, booking change)</tspan>
+    <tspan x="1200" dy="22">and design it end-to-end.</tspan>
+  </text>
+  <text x="1400" y="2160" font-size="20" font-weight="700" fill="#1e1e1e" text-anchor="middle" font-style="italic">Depth beats breadth.</text>
+</svg>
