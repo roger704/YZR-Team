@@ -4,6 +4,10 @@
 
 The 10 seconds between an AI agent asking for the go-ahead and the owner tapping back. Not just Approve/Deny, but the full spectrum: constrain, modify, whisper, takeover, deny-with-reason, defer.
 
+## Prototype
+
+Interactive mock-up built with Lovable → [**roger704/hands-free-help**](https://github.com/roger704/hands-free-help)
+
 ## Contents
 
 | File | What it is |
