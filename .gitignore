@@ -2,3 +2,5 @@
 .claude/
 node_modules/
 *.log
+presentation/dist/
+presentation/.slidev/

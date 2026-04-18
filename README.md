@@ -8,6 +8,14 @@ The 10 seconds between an AI agent asking for the go-ahead and the owner tapping
 
 Interactive mock-up built with Lovable → [**roger704/hands-free-help**](https://github.com/roger704/hands-free-help)
 
+## Presentation
+
+Slidev deck that pulls the live Lovable mock via iframe — see [`presentation/`](./presentation/).
+
+```bash
+cd presentation && npm install && npm run dev
+```
+
 ## Contents
 
 | File | What it is |
