@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "documentation": {
+    "required": [
+      "README.md",
+      "docs/PROJECT.md",
+      "docs/deployment-documentation.md"
+    ],
+    "api": [],
+    "operational_notes": [
+      "docs/PROJECT.md"
+    ]
+  },
+  "deployments": [
+    {
+      "workflow": ".github/workflows/deploy.yml",
+      "job": "deploy",
+      "source": "workflow_head",
+      "environment": "github-pages"
+    }
+  ],
+  "manual_environments": []
+}
