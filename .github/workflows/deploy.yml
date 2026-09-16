@@ -25,6 +25,9 @@ jobs:
         working-directory: presentation
     steps:
       - uses: actions/checkout@v4
+      - name: Check deployment documentation before build
+        working-directory: .
+        run: python3 scripts/check-documentation.py
 
       - uses: actions/setup-node@v4
         with:

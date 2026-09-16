@@ -37,3 +37,7 @@ cd presentation && npm install && npm run dev
 4. **Owner decides** — one tap on the response spectrum
 5. **Agent resumes** — in-character, without breaking the conversation
 6. **Outcome** — result + learning signal
+
+## Maintainer documentation
+
+[Project guide: setup, architecture, verification and operations](docs/PROJECT.md) · [Changelogs](changelogs/README.md). The project guide distinguishes implemented behavior from proposals and live deployment evidence.
