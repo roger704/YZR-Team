@@ -12,7 +12,8 @@ flowchart LR
   Design["FigJam / Excalidraw flow assets"] --> Author
   Author --> Slides["presentation/slides.md"]
   Slides --> Build["Slidev static build"]
-  Build --> Pages["GitHub Pages deployment"]
+  Build --> Gate["Nexus exact-source review preflight"]
+  Gate -->|OIDC authorized| Pages["GitHub Pages deployment"]
   Pages --> Browser["Audience browser"]
   Browser -. iframe .-> Prototype["Separate hands-free-help prototype"]
 ```

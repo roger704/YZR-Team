@@ -41,3 +41,16 @@ For native-store/extension UI installation or other out-of-band actions, report 
 ## Shared implementation
 
 Canonical scripts and tests live in [agent-stack](https://github.com/roger704/agent-stack/tree/main/scripts); copies in active project repositories allow their own deployment checks to run without downloading executable code at deployment time. Update and test the shared copies together.
+
+## Reviewed deployment source
+
+Immediately before publication, the deployment job runs
+`scripts/check-deployment-review.py --github-oidc` for the exact workflow SHA.
+Nexus must authorize the deployment commit through its merged PR, reviewed head,
+complete OCR coverage, resolved high/critical blockers and trusted required CI.
+Missing/pending/unavailable evidence fails the job before deployment. The token
+is ephemeral GitHub Actions OIDC, scoped to the fixed read-only Nexus preflight
+audience; no operator credential is stored in GitHub. Nexus must enroll this
+repository, `.github/workflows/deploy.yml`, default branch and deployment
+environment before this workflow can deploy. This gate does not prevent manual
+GitHub merges or direct pushes on unprotected repositories.

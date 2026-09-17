@@ -29,6 +29,10 @@ jobs:
         working-directory: .
         run: python3 scripts/check-documentation.py
 
+      - name: Verify deployment review client
+        working-directory: .
+        run: python3 -m unittest discover -s scripts -p test_deployment_review.py
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -57,5 +61,13 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Require reviewed deployment source
+        env:
+          DEPLOY_REPOSITORY: ${{ github.repository }}
+          DEPLOY_SHA: ${{ github.sha }}
+        run: python3 scripts/check-deployment-review.py --github-oidc --repository "$DEPLOY_REPOSITORY" --sha "$DEPLOY_SHA" --require-check documentation
       - id: deployment
         uses: actions/deploy-pages@v4
