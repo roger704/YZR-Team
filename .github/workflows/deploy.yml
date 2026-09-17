@@ -70,7 +70,13 @@ jobs:
         env:
           DEPLOY_REPOSITORY: ${{ github.repository }}
           DEPLOY_SHA: ${{ github.sha }}
-        run: python3 scripts/check-deployment-review.py --github-oidc --repository "$DEPLOY_REPOSITORY" --sha "$DEPLOY_SHA" --require-check documentation
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f scripts/check-deployment-review.py
+          test ! -L scripts/check-deployment-review.py
+          printf '%s  %s\n' 'da49366637a05305cbff300e4643cd348f7fbc08bd93aa84c6c28da2f45b9b3b' 'scripts/check-deployment-review.py' | sha256sum --check --status
+          python3 -I scripts/check-deployment-review.py --github-oidc --repository "$DEPLOY_REPOSITORY" --sha "$DEPLOY_SHA" --require-check documentation
       - uses: actions/configure-pages@v5
       - id: deployment
         uses: actions/deploy-pages@v4

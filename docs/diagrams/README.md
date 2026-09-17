@@ -36,3 +36,5 @@ Before planning, read this map and the [project guide](../PROJECT.md), then insp
 The [documentation deployment workflow](../deployment-documentation.md) defines the repository checks and reporting boundary. A structural check can identify missing or changed documentation, but cannot establish that a diagram matches runtime behavior. Human/code review must verify arrows, ownership, persistence and external dependencies.
 
 Diagram maintenance uses `.nexus/diagrams.json` and `scripts/check-diagrams.py`. After reviewing the staged source changes against this map, update the source fingerprint with the shared checker and stage the metadata. The fingerprint records a review boundary, not semantic proof. Nexus tracks source changes and can open refresh PRs through the development/review workflow; updates remain reviewable PR changes, not assumed automatic merges.
+
+The deployment boundary verifies a literal canonical-client digest before isolated Python execution. A modified helper or repository import shadow cannot replace that check. Workflow writers retain authority to change the workflow itself; review and source receipts do not remove that repository permission.

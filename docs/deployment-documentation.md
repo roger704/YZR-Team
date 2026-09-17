@@ -60,3 +60,5 @@ write and OIDC minting permissions are limited to the deployment job, bounded
 to 10 minutes. No deployment authority is inherited by package installation.
 Pages configuration lookup also runs in the authorized deployment job after
 preflight, keeping package installation outside the Pages permission boundary.
+
+The deployment workflow pins the client SHA-256 as a literal and rejects nonregular or symlink clients before checking that digest. It runs the verified file with `python3 -I`, preventing repository files or `PYTHONPATH` from shadowing standard-library imports. A helper-only change therefore cannot replace its decision logic. Updating the helper requires a reviewed workflow digest update. Repository writers can still remove or rewrite the workflow itself; this is not a tamper-proof GitHub merge restriction.
