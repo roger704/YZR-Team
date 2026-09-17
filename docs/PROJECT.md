@@ -23,3 +23,7 @@ Every actual deployment needs a distinct record under [changelogs](../changelogs
 ## Interfaces and further reading
 
 No repository-owned HTTP API. `sample-data.json` is design fixture data, not a live approval service.
+
+## Architecture diagrams
+
+Read [the current architecture and data-flow maps](diagrams/README.md) before planning changes. Proposed behavior is labeled separately from implemented behavior.
