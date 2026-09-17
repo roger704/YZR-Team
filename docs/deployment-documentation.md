@@ -41,3 +41,24 @@ For native-store/extension UI installation or other out-of-band actions, report 
 ## Shared implementation
 
 Canonical scripts and tests live in [agent-stack](https://github.com/roger704/agent-stack/tree/main/scripts); copies in active project repositories allow their own deployment checks to run without downloading executable code at deployment time. Update and test the shared copies together.
+
+## Reviewed deployment source
+
+Immediately before publication, the deployment job runs
+`scripts/check-deployment-review.py --github-oidc` for the exact workflow SHA.
+Nexus must authorize the deployment commit through its merged PR, reviewed head,
+complete OCR coverage, resolved high/critical blockers and trusted required CI.
+Missing/pending/unavailable evidence fails the job before deployment. The token
+is ephemeral GitHub Actions OIDC, scoped to the fixed read-only Nexus preflight
+audience; no operator credential is stored in GitHub. Nexus must enroll this
+repository, `.github/workflows/deploy.yml`, default branch and deployment
+environment before this workflow can deploy. This gate does not prevent manual
+GitHub merges or direct pushes on unprotected repositories.
+
+The build job has contents-read permissions only and a 20-minute timeout. Pages
+write and OIDC minting permissions are limited to the deployment job, bounded
+to 10 minutes. No deployment authority is inherited by package installation.
+Pages configuration lookup also runs in the authorized deployment job after
+preflight, keeping package installation outside the Pages permission boundary.
+
+The deployment workflow pins the client SHA-256 as a literal and rejects nonregular or symlink clients before checking that digest. It runs the verified file with `python3 -I`, preventing repository files or `PYTHONPATH` from shadowing standard-library imports. A helper-only change therefore cannot replace its decision logic. Updating the helper requires a reviewed workflow digest update. Repository writers can still remove or rewrite the workflow itself; this is not a tamper-proof GitHub merge restriction.
