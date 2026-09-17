@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Fail-closed client for Nexus's deployment-review decision contract (server required)."""
 import argparse
+import http.client
 import json
 import os
 import re
@@ -107,7 +108,7 @@ def main():
         decision = verify(request(args.repository, args.sha, args.require_check, token, args.github_oidc), args.repository, args.sha, args.require_check)
         print(json.dumps(decision))
         return 0
-    except (ValueError, OSError, urllib.error.URLError):
+    except (ValueError, OSError, urllib.error.URLError, http.client.HTTPException):
         # Do not relay server error bodies, credentials or exception messages.
         print(json.dumps({'allowed': False, 'error': 'deployment_review_preflight_failed'}))
         return 1

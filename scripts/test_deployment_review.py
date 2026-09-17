@@ -1,4 +1,6 @@
 import copy
+import contextlib
+import io
 import importlib.util
 import pathlib
 import unittest
@@ -33,6 +35,12 @@ class GateTests(unittest.TestCase):
    with self.assertRaises(gate.Denied):self.check(v)
   v=valid();v['checks'].append(copy.deepcopy(v['checks'][0]))
   with self.assertRaises(gate.Denied):self.check(v)
+ def test_malformed_http_response_has_only_content_free_failure(self):
+  output=io.StringIO()
+  with patch('sys.argv',['gate','--repository','owner/repo','--sha',TARGET,'--require-check','documentation']),patch.dict(os.environ,{'NEXUS_DEPLOYMENT_PREFLIGHT_TOKEN':'synthetic-token'}),patch.object(gate,'request',side_effect=gate.http.client.BadStatusLine('private-response-sentinel')),contextlib.redirect_stdout(output):
+   self.assertEqual(gate.main(),1)
+  self.assertEqual(json.loads(output.getvalue()),{'allowed':False,'error':'deployment_review_preflight_failed'})
+  self.assertNotIn('private-response-sentinel',output.getvalue())
  def test_redirect_does_not_forward_auth(self):
   with self.assertRaises(gate.Denied):gate.NoRedirect().redirect_request(None,None,None,None,None,None)
 
