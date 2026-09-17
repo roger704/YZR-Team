@@ -54,3 +54,9 @@ audience; no operator credential is stored in GitHub. Nexus must enroll this
 repository, `.github/workflows/deploy.yml`, default branch and deployment
 environment before this workflow can deploy. This gate does not prevent manual
 GitHub merges or direct pushes on unprotected repositories.
+
+The build job has contents-read permissions only and a 20-minute timeout. Pages
+write and OIDC minting permissions are limited to the deployment job, bounded
+to 10 minutes. No deployment authority is inherited by package installation.
+Pages configuration lookup also runs in the authorized deployment job after
+preflight, keeping package installation outside the Pages permission boundary.

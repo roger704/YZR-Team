@@ -31,7 +31,10 @@ def verify(value, repository, target, required):
     head = pr.get('head_sha')
     if not isinstance(head, str) or not SHA.fullmatch(head) or review.get('head_sha') != head or review.get('status') != 'complete' or review.get('coverage_complete') is not True or type(review.get('unresolved_blockers')) is not int or review.get('unresolved_blockers') != 0 or not review.get('workflow_id'):
         raise Denied('review_incomplete')
-    # Server verifies producer identity, immutable refs and disposition authority.
+    # The fixed Nexus server verifies producer identity and immutable refs.
+    # A merge SHA may differ from the PR head only when the server has verified
+    # identical Git trees and a first parent bound to the reviewed target base.
+    # This client does not independently grant trust to an arbitrary head check.
     checks = value.get('checks')
     if not isinstance(checks, list):
         raise Denied('checks_missing')
@@ -50,6 +53,13 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 def github_oidc_token():
     url = urllib.parse.urlsplit(os.environ.get('ACTIONS_ID_TOKEN_REQUEST_URL', ''))
     hostname = url.hostname or ''
+    # GitHub's runner supplies this URL from its trusted SystemConnection, and
+    # GitHub documents requesting the token from that URL (not one fixed host):
+    # https://docs.github.com/en/actions/reference/security/oidc#methods-for-requesting-the-oidc-token
+    # The anchored suffix is GitHub's DNS zone, not user-owned github.io hosting.
+    # TLS verifies that host; lookalikes, userinfo, other ports and redirects fail.
+    # Code that can replace the runner environment can already read its token;
+    # this client must run only in the trusted deployment job, never PR tests.
     if url.scheme != 'https' or not hostname.endswith('.actions.githubusercontent.com') or url.username or url.password or url.port not in (None, 443) or url.fragment:
         raise Denied('oidc_request_url_invalid')
     request_token = os.environ.get('ACTIONS_ID_TOKEN_REQUEST_TOKEN')

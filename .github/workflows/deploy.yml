@@ -10,8 +10,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -19,6 +17,7 @@ concurrency:
 
 jobs:
   build:
+    timeout-minutes: 20
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -48,13 +47,16 @@ jobs:
       - name: SPA fallback (copy index.html → 404.html)
         run: cp dist/index.html dist/404.html
 
-      - uses: actions/configure-pages@v5
-
       - uses: actions/upload-pages-artifact@v3
         with:
           path: presentation/dist
 
   deploy:
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -69,5 +71,6 @@ jobs:
           DEPLOY_REPOSITORY: ${{ github.repository }}
           DEPLOY_SHA: ${{ github.sha }}
         run: python3 scripts/check-deployment-review.py --github-oidc --repository "$DEPLOY_REPOSITORY" --sha "$DEPLOY_SHA" --require-check documentation
+      - uses: actions/configure-pages@v5
       - id: deployment
         uses: actions/deploy-pages@v4

@@ -38,7 +38,7 @@ class GateTests(unittest.TestCase):
 
 class OidcClientTests(unittest.TestCase):
  def test_untrusted_oidc_urls_fail_before_network(self):
-  for url in ['http://pipelines.actions.githubusercontent.com/token','https://evil.invalid/token','https://pipelines.actions.githubusercontent.com.evil.invalid/token','https://user:pass@pipelines.actions.githubusercontent.com/token','https://pipelines.actions.githubusercontent.com:444/token']:
+  for url in ['http://pipelines.actions.githubusercontent.com/token','https://evil.invalid/token','https://evilactions.githubusercontent.com/token','https://actions.githubusercontent.com/token','https://pipelines.actions.githubusercontent.com.evil.invalid/token','https://user:pass@pipelines.actions.githubusercontent.com/token','https://pipelines.actions.githubusercontent.com:444/token']:
    with patch.dict(os.environ,{'ACTIONS_ID_TOKEN_REQUEST_URL':url,'ACTIONS_ID_TOKEN_REQUEST_TOKEN':'secret'}), patch.object(gate.urllib.request,'build_opener') as opener:
     with self.assertRaises(gate.Denied):gate.github_oidc_token()
     opener.assert_not_called()
@@ -51,6 +51,12 @@ class OidcClientTests(unittest.TestCase):
    self.assertNotIn('secret-sentinel',req.full_url)
    self.assertEqual(gate.urllib.parse.parse_qs(gate.urllib.parse.urlsplit(req.full_url).query)['audience'],[gate.ENDPOINT])
    self.assertEqual(req.get_header('Authorization'),'Bearer secret-sentinel')
+ def test_github_owned_regional_host_is_not_a_lookalike(self):
+  response=MagicMock();response.__enter__.return_value=response;response.read.return_value=b'{"value":"aaa.bbb.ccc"}'
+  opener=MagicMock();opener.open.return_value=response
+  with patch.dict(os.environ,{'ACTIONS_ID_TOKEN_REQUEST_URL':'https://region.pipelines.actions.githubusercontent.com/token','ACTIONS_ID_TOKEN_REQUEST_TOKEN':'synthetic-token'}),patch.object(gate.urllib.request,'build_opener',return_value=opener):
+   self.assertEqual(gate.github_oidc_token(),'aaa.bbb.ccc')
+   self.assertEqual(gate.urllib.parse.urlsplit(opener.open.call_args.args[0].full_url).hostname,'region.pipelines.actions.githubusercontent.com')
  def test_oidc_preflight_does_not_mix_operator_header(self):
   response=MagicMock();response.__enter__.return_value=response;response.read.return_value=b'{}'
   opener=MagicMock();opener.open.return_value=response
